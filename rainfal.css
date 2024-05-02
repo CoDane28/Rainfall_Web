@@ -1,0 +1,702 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+/*--------------ROOT VARIABLE--------------*/
+:root{
+  --color-primary: rgb(71, 7,234);
+  --color-danger: rgb(255, 67, 54);
+  --color-success: rgb(34, 202,75);
+  --color-warning:rgb(234, 181, 7);
+  --color-purple:rgb(160, 99, 245);
+  --color-white: #fff;
+  --color-dark: #27282f;
+  --color-light: #f0eff5;
+  --color-gray-dark: #56555e;
+  --color-gray-light: #86848c;
+
+  --color-primary-light:rgba(71, 7, 234,0.2);
+  --color-success-light: rgba(34, 202,75, 0.2);
+  --color-danger-light:rgba(234, 181, 7, 0.2);
+  --color-purple-light:rgba(160, 99, 245,0.2);
+
+  --card-border-raidus: 1.6rem;
+  --border-raidus-1: 1rem;
+  --border-raidus-2: 6rem;
+  
+
+  --card-padding: 1.6rem;
+  --padding-1: 1rem;
+  --padding-2: 8rem;
+}
+
+*{
+  margin: 0;
+  padding: 0;
+  outline: 0;
+  border: 0;
+  appearance: none;
+  text-decoration: none;
+  list-style: none;
+  box-sizing: border-box;
+}
+
+html{
+  font-size: 12px;
+}
+
+body{
+  background: var(--color-light);
+  font-family: poppins, sans-serif;
+  min-height: 100vh;
+  color: var(--color-dark);
+}
+
+img{
+  width: 2.5%;
+}
+
+h1{
+  font-size: 2.2rem;
+  font-weight: 500;
+}
+
+h2{
+  font-size: 1.5rem;
+}
+
+h3{
+  font-size: 1.2rem;
+}
+
+h4{
+  font-size: 1rem;
+}
+
+h5{
+  font-size: 0.8rem;
+  font-weight: 500;
+}
+h5{
+  font-size: 7.6rem;
+}
+
+p{
+  font-size: 0.86rem;
+  color: var(--color-gray-dark);
+}
+
+small{
+  font-weight: 300;
+  font-size: 0.77rem;
+}
+
+.text-muted{
+  color: var(--color-gray-light);
+}
+
+.primary{
+  color: var(--color-primary);
+}
+.danger{
+  color: var(--color-danger);
+}
+.success{
+  color: var(--color-success);
+}
+.purple{
+  color: var(--color-purple);
+}
+
+
+.bg-primary{
+  background: var(--color-primary);
+  box-shadow: 0 0.8rem 0.8rem var(--color-primary-light);
+}
+.bg-danger{
+  background: var(--color-danger);
+  box-shadow: 0 0.8rem 0.8rem var(--color-danger-light);
+}
+.bg-success{
+  background: var(--color-success);
+  box-shadow: 0 0.8rem 0.8rem var(--color-success-light);
+}
+.bg-purple{
+  background: var(--color-purple);
+  box-shadow: 0 0.8rem 0.8rem var(--color-purple-light);
+}
+
+.bg-dark{
+  background:#27282f;
+  box-shadow: 0 0.8rem 0.8rem rgba(0,0,0,0.2) ;
+}
+
+/*======NAV BAR =====*/
+nav{
+  width: 100%;
+  background: var(--color-white);
+  padding: 1rem 0;
+}
+
+nav .container{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  width: 96%;
+  margin: 0 auto;
+}
+
+nav img .logo{
+  width: 7rem;
+}
+
+nav .theme-btn{
+  display: flex;
+  position: absolute;
+  right: 3%;
+  background:var(--color-light);
+  width: 5rem;
+  height: 2rem;
+  border-radius: var(--border-raidus-2);
+  cursor: pointer;
+  overflow: hidden;
+}
+
+nav .theme-btn span{
+  width: 50%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content:center;
+  font-size: 1.3rem;
+}
+
+nav .theme-btn .active{
+  background: var(--color-dark);
+  border-radius: var(--border-raidus-2);
+  color: var(--color-white);
+}
+
+.back-button {
+  font-family: 'Poppins', sans-serif; /* Use Poppins font */
+  display: flex; /* Use flexbox for centering */
+  align-items: center; /* Center items vertically */
+  justify-content: center; /* Center items horizontally */
+  background-color: #add2ec; /* Blue background color */
+  color: #fff; /* White text color */
+  border: none; /* Remove border */
+  padding: 8px 16px; /* Add padding */
+  border-radius: 4px; /* Add border radius */
+  cursor: pointer; /* Change cursor to pointer on hover */
+  transition: background-color 0.3s ease; /* Smooth background color transition */
+}
+
+.back-button:hover {
+  background-color: #cfdeee; /* Darker blue on hover */
+}
+
+.material-icons-sharp {
+  font-size: 20px; /* Adjust icon size */
+  margin-right: 8px; /* Add some space between icon and text */
+}
+
+
+/*=================ASIDE AND SIDEBAR==================*/
+
+main{
+  display: grid;
+  grid-template-columns: 18rem auto 15rem;
+  gap: 2rem;
+  width: 96%;
+  max-height: 100%;
+  margin: 1rem auto 4rem;
+
+}
+
+main aside{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 88vh;
+}
+
+/*will display only on mobile and tablets*/
+main aside button#close-btn{
+  display: none;
+}
+
+main aside .sidebar a{
+  display: flex;
+  align-items: center;
+  gap: .8rem;
+  height: 6rem;
+  color: var(--color-gray-light);
+  position: relative;
+}
+main aside .sidebar a span{
+  font-size: 1.7rem;
+  margin-left: 3rem;
+  transition: all 300ms ease;
+}
+
+main aside .sidebar a.active {
+  border-radius: var(--border-raidus-1);
+  background: var(--color-white);
+  color:#7fb8e0;
+}
+
+main aside .sidebar a.active::before {
+  content: "";
+  width: 6px;
+  height: 100%;
+  position: absolute;
+  background:#7fb8e0;
+}
+
+main aside .sidebar a:hover,
+main aside .sidebar a.active:hover {
+  color:#7fb8e0;
+}
+
+main aside .sidebar a:hover span,
+main aside .sidebar a.active:hover span {
+  margin-left: 2rem;
+}
+
+main aside .sidebar h4{
+  font-weight: 500;
+  font-size: 20px;
+}
+/*================= DASHBOARD ==================*/
+.dashboardContent .calendar {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.custom-date-picker {
+  color: var(--color-gray-light);
+  padding: 10px;
+  border: 2px solid #ddd6d6;
+  border-radius: var(--border-raidus-1);
+  font-size: 16px;
+  width: 88%;
+  text-align: center;
+  cursor: pointer;
+}
+.dashboardContent .flex-container{
+  margin-top: .5rem;
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  
+}
+.dashboardContent .flex-box {
+  position: relative;
+  width: 335px;
+  height: 200px;
+  background: #cfe4f3;
+  color: var(--color-gray-light);
+  text-align: left;
+  padding: 20px;
+  line-height: 27px;
+  border-radius: var(--card-border-raidus);
+  margin: 20px;
+  
+}
+
+.dashboardContent .flex-box img {
+  position: absolute;
+  top: 40px;
+  right: 20px;
+  width: 40%; 
+  height: 60%; 
+}
+
+.chart{
+  background:#cfe4f3 ;
+  margin-left: 6%;
+  max-width: 88%;
+  margin-top: 1rem;
+  border-radius: var(--card-border-raidus);
+  padding:0;
+}
+
+/*================= MAP ==================*/
+h2{
+  text-align: center; 
+  font-size: 32px; /* Increase font size */
+  color: #333; 
+  margin-bottom: 20px; 
+  font-family: 'Poppins', sans-serif; /* Add Poppins font */
+}
+/* Style for the iframe */
+iframe {
+  width: 100%; /* Set the width to 100% of its container */
+  height: 650px; /* Set the height to your desired value */
+  border-radius: var(--border-raidus-1);
+  overflow: hidden; /* Hide any overflow content */
+}
+
+
+
+/*================= MUNICIPALITY ==================*/
+
+#municipalitiesContent h2 {
+  text-align: center; 
+  font-size: 32px; /* Increase font size */
+  color: #333; 
+  margin-bottom: 20px; 
+  font-family: 'Poppins', sans-serif; /* Add Poppins font */
+}
+
+#buttonsContainer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center; /* Center align the buttons horizontally */
+}
+
+#buttonsContainer button {
+  width: 200px; /* Fixed width for the button */
+  height: 80px; /* Fixed height for the button */
+  margin-right: 10px;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center; /* Center align both horizontally and vertically */
+  padding: 10px; 
+  background-color: #f0f0f0;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1); /* Add shadow effect */
+  cursor: pointer;
+}
+
+#buttonsContainer button img {
+  margin-right: 10px; /* Adjusted margin */
+  margin-left: 10px; /* Add margin to the left */
+  height: 40px; /* Set the height to a fixed value */
+  width: auto; /* Let the width adjust automatically */
+}
+#talisayButton,
+#cuencaButton,
+#tanauanButton,
+#agoncilloButton {
+  font-size: 25px; /* Increase font size for Talisay and Cuenca buttons */
+  font-family: 'Poppins', sans-serif; /* Add Poppins font */
+}
+
+
+/* Modal styles */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+.modal-content {
+  background-color: #fefefe;
+  position: absolute; /* Position the modal content */
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%); /* Center the modal content */
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%; /* Could be more or less, depending on screen size */
+}
+
+/* Close button */
+.close {
+  color: #aaa;
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+
+/*================= BLOGS ==================*/
+
+.blogContainer {
+  width: 48%; /* Set the width of the container to fit two columns with some spacing */
+  margin-bottom: 20px; /* Add some bottom margin for spacing */
+}
+
+.blog-item {
+  display: flex;
+  align-items: center;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+.logo-icon {
+  border-radius: 20px;
+  width: 100px; /* Adjust as needed */
+  height: auto;
+  margin: 20px; /* Add margin to the logo */
+}
+
+.blog-content {
+  flex: 1; /* Take up remaining space */
+  padding: 20px;
+}
+
+.blog-title {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+}
+
+.blog-content p {
+  font-size: 1rem;
+}
+
+.midContent {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between; /* Distribute items evenly between the flex lines */
+}
+
+.blogContainer {
+  margin-top: 20px;
+  width: 47%; /* Set the width of the container to fit two columns with some spacing */
+  margin-bottom: 30px; /* Add some bottom margin for spacing */
+}
+
+.blog-item {
+  display: flex;
+  align-items: center;
+  background-color: #f9f9f9; /* Default background color for all cards */
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+.logo-icon {
+  width: 100px; /* Adjust as needed */
+  height: auto;
+  margin: 20px; /* Add margin to the logo */
+}
+
+.blog-content {
+  flex: 1; /* Take up remaining space */
+  padding: 20px;
+}
+
+.blog-title {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+}
+
+.blog-content p {
+  font-size: 1rem;
+}
+
+/* Specific background colors for each card */
+.blogContainer:nth-child(1) .blog-item {
+  background-color: #abff92; /* Light orange for the first card */
+}
+
+.blogContainer:nth-child(2) .blog-item {
+  background-color: #f4aefd; /* Light green for the second card */
+}
+
+.blogContainer:nth-child(3) .blog-item {
+  background-color: #cfa5ff; /* Light pink for the third card */
+}
+
+.blogContainer:nth-child(4) .blog-item {
+  background-color: #92c7f3; /* Light blue for the fourth card */
+}
+
+.blogContainer:nth-child(5) .blog-item {
+  background-color: #ff8363; /* Light purple for the fifth card */
+}
+
+.blogContainer:nth-child(6) .blog-item {
+  background-color: #fdd98a; /* Light teal for the sixth card */
+}
+
+
+
+
+/*================= SETTINGS ==================*/
+.settings_Content h1{
+  margin-left: 10%;
+  margin-top: 2rem;
+  font-size: 30px;
+}
+.setting_content{
+  text-align: left;
+  margin-left: 10%;
+  margin-top: 3%;  
+}
+.setting_content h3{
+  font-size: 20px;
+  font-weight: 500;
+  margin-top: 3rem;
+}
+
+/*================= ABOUT ==================*/
+.about_Content h1{
+  margin-left: 10%;
+  margin-top: 2rem;
+  font-size: 30px;
+}
+.aboutContent{
+  margin-top: 10%;
+  margin-left: 10%;
+  width: 35%;
+  height: 35%;
+  position: relative;
+}
+.content {
+  position: absolute;
+  text-align: left;
+  margin-left: 50%;
+  top: 30%;
+  right: 10%;
+  margin-right: 10%;
+}
+.content h1{
+  font-size: 40px;
+  margin-left: 0%;
+}
+.content h3{
+  margin-top: 10px;
+  font-weight: 500;
+}
+
+
+
+/*================= OUTPUT STYLE ==================*/
+
+
+
+#rainfallResultText{
+    font-size: 45px;
+    margin-top: 40px;
+}
+
+#locationResultText{
+  font-size: 15px;
+  margin-top: 5px;
+  width: 150px;
+}
+
+/*================= OUTPUT STYLE ==================*/
+.rightContainer {
+  width: 100%; 
+  float: right; 
+  background-color: #cfe4f3; 
+  border-radius: var(--border-raidus-1); 
+}
+
+
+.listContent{
+  height: 610px; /* Set a fixed height for the container */
+  overflow-y: auto; /* Enable vertical scrolling */
+}
+.rightBox {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  box-sizing: border-box;
+  border: none;
+  overflow: hidden;
+  border-bottom:2px solid rgb(85, 85, 85) ;
+}
+.rightTitle{
+  text-align: left;
+  margin-left:64%;
+  margin-right: 1%;
+}
+.rightBox img{
+  width: 30%;
+  height: 8%;
+  float: left;
+  margin-right: 65%;  
+}
+
+
+#dataList {
+  list-style-type: none;
+  padding: 0;
+}
+
+#dataList li {
+  margin-bottom: 20px;
+  border-bottom: 1px solid rgb(117, 117, 117); /* Black underline for division */
+  padding-bottom: 10px; /* Optional: Add padding for better spacing */
+}
+
+/* Additional styling for data points */
+.dataPoint {
+  
+  font-family: 'Poppins', sans-serif;;
+}
+
+.rainfallLabel, .locationLabel{
+  font-weight: 500;
+  font-style: italic;
+  font-size: 20px;
+  margin-left: 1rem;
+}
+.locationFont{
+  margin-left: 1rem;
+  font-size: 14px;
+}
+.timeFont{
+  font-size: 24px; /* Adjust the font size as needed */
+  margin-left: 1rem;
+}
+.rainfallFont{
+  font-size: 35px; /* Adjust the font size as needed */
+  margin-left: 1rem;
+  font-family: "Chakra Petch", sans-serif;
+}
+.dateFont {
+  font-size: 18px; /* Adjust the font size as needed */
+  margin-left: 1rem;
+  
+}
+/* Hide scrollbar but allow scrolling */
+.listContent::-webkit-scrollbar {
+  width: 8px; /* Set the width of the scrollbar */
+}
+
+/* Track */
+.listContent::-webkit-scrollbar-track {
+  background: transparent; /* Set a transparent background */
+}
+
+/* Handle */
+.listContent::-webkit-scrollbar-thumb {
+  background: #888; /* Set the color of the scrollbar button */
+  border-radius: 4px; /* Set border radius for the scrollbar button */
+}
+
+/* Handle on hover */
+.listContent::-webkit-scrollbar-thumb:hover {
+  background: #555; /* Change the color of the scrollbar button on hover */
+}
+
+
+
+
